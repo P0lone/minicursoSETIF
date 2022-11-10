@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(const MyApp());
@@ -41,19 +42,25 @@ class _MyHomePageState extends State<MyHomePage> {
   );
 
   final btnFone = IconButton(
-    onPressed: () {},
+    onPressed: () {
+      launchUrl(Uri(scheme: 'tel', path: '99999-9999'));
+    },
     icon: const Icon(Icons.phone),
     color: Colors.black87,
   );
 
   final btnEmail = IconButton(
-    onPressed: () {},
+    onPressed: () {
+      launchUrl(Uri(scheme: 'mailto', path: 'example@gmail.com'));
+    },
     icon: const Icon(Icons.email),
     color: Colors.black87,
   );
 
   final btnSMS = IconButton(
-    onPressed: () {},
+    onPressed: () {
+      launchUrl(Uri(scheme: 'sms', path: '99999-9999'));
+    },
     icon: const Icon(Icons.sms),
     color: Colors.black87,
   );
